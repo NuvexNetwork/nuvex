@@ -1060,10 +1060,7 @@ fn vrf_fulfillment_verifies_the_proof_and_runs_the_callback() {
         Ok(meta) => meta.logs.join("\n"),
         Err(err) => panic!("{}\n{}", err.err, err.meta.pretty_logs()),
     };
-    assert!(
-        callback_logs.contains("nuvex-callback"),
-        "{callback_logs}"
-    );
+    assert!(callback_logs.contains("nuvex-callback"), "{callback_logs}");
     let called: OracleRequest = account_data(&svm, &callback_request);
     assert_eq!(called.status, RequestStatus::CallbackExecuted.as_u8());
     let after_callback: NodeAccount = account_data(&svm, &node_pda(&node_authority.pubkey()));
