@@ -17,7 +17,7 @@ nuvex-oracle-registry = { path = "../../programs/oracle-registry", features = ["
 nuvex-protocol-types = { workspace = true }
 nuvex-verification = { path = "../../programs/verification", features = ["no-entrypoint"] }
 nuvex-vrf = { workspace = true, features = ["prove"] }
-solana-account = "4"
+solana-account = "5"
 solana-address = "2.7"
 solana-instruction = "3.5"
 solana-keypair = "3.1"
