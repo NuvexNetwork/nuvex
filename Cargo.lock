@@ -2238,7 +2238,7 @@ dependencies = [
  "nuvex-vrf",
  "solana-account",
  "solana-address 2.7.0",
- "solana-instruction 3.5.1",
+ "solana-instruction 4.0.0",
  "solana-keypair",
  "solana-message",
  "solana-signer",
