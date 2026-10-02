@@ -45,7 +45,7 @@ axum = "0.8"
 prometheus = "0.14"
 tower = { version = "0.5", features = ["util"] }
 http-body-util = "0.1"
-solana-pubkey = "3.0.0"
+solana-pubkey = "4.3.0"
 solana-ecvrf = "=0.0.1"
 
 [workspace.lints.rust]

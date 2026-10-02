@@ -2171,7 +2171,7 @@ dependencies = [
  "nuvex-proof-types",
  "nuvex-sdk",
  "nuvex-vrf",
- "solana-pubkey 3.0.0",
+ "solana-pubkey 4.3.0",
 ]
 
 [[package]]
@@ -2261,7 +2261,7 @@ dependencies = [
  "nuvex-common",
  "nuvex-job-types",
  "nuvex-vrf",
- "solana-pubkey 3.0.0",
+ "solana-pubkey 4.3.0",
  "thiserror 2.0.21",
 ]
 
