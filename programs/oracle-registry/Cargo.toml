@@ -1,0 +1,31 @@
+[package]
+name = "nuvex-oracle-registry"
+version = "0.1.0"
+description = "Nuvex node registry program. Nodes register a VRF key without stake."
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "nuvex_oracle_registry"
+
+[features]
+default = []
+cpi = ["no-entrypoint"]
+no-entrypoint = []
+no-log-ix-name = []
+idl-build = ["anchor-lang/idl-build"]
+anchor-debug = []
+custom-heap = []
+custom-panic = []
+
+[dependencies]
+anchor-lang = { workspace = true }
+nuvex-common = { workspace = true }
+nuvex-job-types = { workspace = true }
+nuvex-vrf = { workspace = true }
+solana-ecvrf = { workspace = true }
+
+[lints]
+workspace = true

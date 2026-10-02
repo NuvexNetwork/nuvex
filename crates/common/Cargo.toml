@@ -1,0 +1,15 @@
+[package]
+name = "nuvex-common"
+version = "0.1.0"
+description = "Shared Nuvex constants. No protocol execution."
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+
+[dev-dependencies]
+serde_json = { workspace = true }
+
+[lints]
+workspace = true

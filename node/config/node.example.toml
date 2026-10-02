@@ -1,0 +1,7 @@
+# Example only. The node reads environment variables, not this file, in Milestone 0.
+# Copy values into the environment. Do not put a private key in this file.
+
+# NUVEX_NODE_HEALTH_BIND=127.0.0.1:8081
+# NUVEX_LOG_FORMAT=json
+# NUVEX_SOLANA_RPC_URL=
+# NUVEX_NODE_KEY_PATH=

@@ -1,0 +1,12 @@
+[package]
+name = "nuvex-proof-types"
+version = "0.1.0"
+description = "Proof vocabulary. Serialization is undefined until an algorithm is chosen."
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+
+[lints]
+workspace = true

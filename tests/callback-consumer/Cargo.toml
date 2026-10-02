@@ -1,0 +1,28 @@
+[package]
+name = "nuvex-callback-consumer"
+version = "0.1.0"
+description = "Test callback program. Not a protocol program and not deployed."
+edition.workspace = true
+license.workspace = true
+publish = false
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "nuvex_callback_consumer"
+
+[features]
+default = []
+no-entrypoint = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+idl-build = ["anchor-lang/idl-build"]
+anchor-debug = []
+custom-heap = []
+custom-panic = []
+
+[dependencies]
+anchor-lang = { workspace = true }
+nuvex-common = { workspace = true }
+
+[lints]
+workspace = true

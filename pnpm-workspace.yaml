@@ -1,0 +1,7 @@
+packages:
+  - "sdk/js"
+
+onlyBuiltDependencies:
+  - "esbuild"
+  - "bufferutil"
+  - "utf-8-validate"

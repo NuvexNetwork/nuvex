@@ -1,0 +1,12 @@
+[package]
+name = "nuvex-protocol-types"
+version = "0.1.0"
+description = "Provisional Nuvex vocabulary. Not an on-chain account layout."
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+
+[lints]
+workspace = true

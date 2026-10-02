@@ -1,0 +1,18 @@
+[package]
+name = "nuvex-cli"
+version = "0.1.0"
+description = "Nuvex operator CLI. Commands report the milestone that implements them."
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[[bin]]
+name = "nuvex"
+path = "src/main.rs"
+
+[dependencies]
+clap = { workspace = true }
+thiserror = { workspace = true }
+
+[lints]
+workspace = true

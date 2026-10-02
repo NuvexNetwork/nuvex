@@ -1,0 +1,12 @@
+[package]
+name = "nuvex-crypto"
+version = "0.1.0"
+description = "Cryptography boundary. No algorithm is implemented."
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+
+[lints]
+workspace = true

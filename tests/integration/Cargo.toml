@@ -1,0 +1,19 @@
+[package]
+name = "nuvex-integration-tests"
+version = "0.1.0"
+description = "Closure tests for protocol paths that are not implemented yet."
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+publish = false
+
+[dependencies]
+nuvex-crypto = { workspace = true }
+nuvex-job-types = { workspace = true }
+nuvex-proof-types = { workspace = true }
+nuvex-sdk = { workspace = true }
+nuvex-vrf = { workspace = true, features = ["prove"] }
+solana-pubkey = { workspace = true }
+
+[lints]
+workspace = true

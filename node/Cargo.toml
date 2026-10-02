@@ -1,0 +1,29 @@
+[package]
+name = "nuvex-oracle-node"
+version = "0.1.0"
+description = "Nuvex oracle node. Health and metrics only until job execution is implemented."
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[[bin]]
+name = "nuvex-node"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = { workspace = true }
+axum = { workspace = true }
+http-body-util = { workspace = true }
+nuvex-crypto = { workspace = true }
+nuvex-job-types = { workspace = true }
+prometheus = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+tokio = { workspace = true }
+tower = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+
+[lints]
+workspace = true

@@ -1,0 +1,17 @@
+[package]
+name = "nuvex-sdk"
+version = "0.1.0"
+description = "Rust SDK for Nuvex. Transaction builders arrive with the programs."
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+nuvex-common = { workspace = true }
+nuvex-job-types = { workspace = true }
+nuvex-vrf = { workspace = true, features = ["prove"] }
+solana-pubkey = { workspace = true }
+thiserror = { workspace = true }
+
+[lints]
+workspace = true

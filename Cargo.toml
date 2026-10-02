@@ -1,0 +1,72 @@
+[workspace]
+resolver = "2"
+members = [
+    "programs/oracle-core",
+    "programs/oracle-registry",
+    "programs/verification",
+    "crates/common",
+    "crates/protocol-types",
+    "crates/job-types",
+    "crates/crypto",
+    "crates/vrf",
+    "crates/proof-types",
+    "node",
+    "sdk/rust",
+    "cli",
+    "tests/integration",
+    "tests/program",
+    "tests/callback-consumer",
+]
+
+[workspace.package]
+edition = "2021"
+license = "Apache-2.0"
+rust-version = "1.89"
+authors = ["Nuvex Protocol"]
+
+[workspace.dependencies]
+nuvex-common = { path = "crates/common" }
+nuvex-protocol-types = { path = "crates/protocol-types" }
+nuvex-job-types = { path = "crates/job-types" }
+nuvex-crypto = { path = "crates/crypto" }
+nuvex-vrf = { path = "crates/vrf" }
+nuvex-proof-types = { path = "crates/proof-types" }
+nuvex-sdk = { path = "sdk/rust" }
+anchor-lang = "=1.2.0"
+thiserror = "2"
+anyhow = "1"
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "net", "signal", "sync", "time"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
+clap = { version = "4", features = ["derive"] }
+axum = "0.8"
+prometheus = "0.14"
+tower = { version = "0.5", features = ["util"] }
+http-body-util = "0.1"
+solana-pubkey = "3.0.0"
+solana-ecvrf = "=0.0.1"
+
+[workspace.lints.rust]
+unused_must_use = "deny"
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(target_os, values("solana"))'] }
+
+[workspace.lints.clippy]
+unwrap_used = "deny"
+todo = "deny"
+unimplemented = "deny"
+dbg_macro = "deny"
+
+[profile.dev]
+overflow-checks = true
+
+[profile.release]
+overflow-checks = true
+lto = "fat"
+codegen-units = 1
+
+[profile.release.build-override]
+opt-level = 3
+incremental = false
+codegen-units = 1

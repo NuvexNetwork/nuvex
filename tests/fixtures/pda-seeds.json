@@ -1,0 +1,10 @@
+{
+  "protocol": "protocol",
+  "registry": "registry",
+  "node": "node",
+  "request": "request",
+  "verification": "verification",
+  "challenge": "challenge",
+  "reward_vault": "reward_vault",
+  "job_config": "job_config"
+}

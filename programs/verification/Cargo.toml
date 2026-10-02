@@ -1,0 +1,30 @@
+[package]
+name = "nuvex-verification"
+version = "0.1.0"
+description = "Nuvex verification program. Checks ECVRF proofs for oracle core."
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "nuvex_verification"
+
+[features]
+default = []
+cpi = ["no-entrypoint"]
+no-entrypoint = []
+no-log-ix-name = []
+idl-build = ["anchor-lang/idl-build"]
+anchor-debug = []
+custom-heap = []
+custom-panic = []
+
+[dependencies]
+anchor-lang = { workspace = true }
+nuvex-common = { workspace = true }
+nuvex-vrf = { workspace = true }
+solana-ecvrf = { workspace = true }
+
+[lints]
+workspace = true

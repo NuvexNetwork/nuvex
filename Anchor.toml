@@ -1,0 +1,35 @@
+[toolchain]
+anchor_version = "1.2.0"
+solana_version = "4.1.2"
+package_manager = "pnpm"
+
+[features]
+resolution = true
+skip-lint = false
+
+[programs.localnet]
+oracle_core = "9CHifhFPRK8nJJpL2nTY17UfYC75aReR4qojVqNaLnoe"
+oracle_registry = "8NuitXiyMGv6jE7WQq8mWaqGDyrDDRkgaNhroNnXkPXZ"
+verification = "4f5BaSpKo64bUDEVSkn4h25b8bNspxi24FMfVa4sfurL"
+
+[programs.devnet]
+oracle_core = "9CHifhFPRK8nJJpL2nTY17UfYC75aReR4qojVqNaLnoe"
+oracle_registry = "8NuitXiyMGv6jE7WQq8mWaqGDyrDDRkgaNhroNnXkPXZ"
+verification = "4f5BaSpKo64bUDEVSkn4h25b8bNspxi24FMfVa4sfurL"
+
+# These ids are the local development ids. They are not mainnet program
+# addresses. scripts/deploy-mainnet.sh refuses to deploy.
+[programs.mainnet]
+oracle_core = "9CHifhFPRK8nJJpL2nTY17UfYC75aReR4qojVqNaLnoe"
+oracle_registry = "8NuitXiyMGv6jE7WQq8mWaqGDyrDDRkgaNhroNnXkPXZ"
+verification = "4f5BaSpKo64bUDEVSkn4h25b8bNspxi24FMfVa4sfurL"
+
+[provider]
+cluster = "localnet"
+wallet = "~/.config/solana/id.json"
+
+[scripts]
+test = "cargo test --workspace"
+
+[workspace]
+members = ["programs/*"]
