@@ -1,7 +1,7 @@
 //! consensus.quorum
 //!
-//! This subsystem is not implemented. It exports a status record so the process
-//! can log that fact. It does not return a job result.
+//! Price reads name their own minimum source count. There is no on-chain quorum.
+//! This process does not vote.
 
 use crate::node::SubsystemInfo;
 

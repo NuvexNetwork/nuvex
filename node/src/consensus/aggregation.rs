@@ -1,7 +1,7 @@
 //! consensus.aggregation
 //!
-//! This subsystem is not implemented. It exports a status record so the process
-//! can log that fact. It does not return a job result.
+//! The median of fresh observations is computed in nuvex-services. This process
+//! does not aggregate and does not submit the result.
 
 use crate::node::SubsystemInfo;
 
