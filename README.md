@@ -6,7 +6,7 @@ Programs accept a job, an input, constraints, and a callback. Randomness is the 
 
 ## Status
 
-Milestone 3 verifies VRF proofs with `solana-ecvrf` 0.0.1 (RFC 9381 ECVRF-EDWARDS25519-SHA512-TAI, 80-byte proof, 64-byte output). No audit of that crate was found. A node fulfills only when it is active, its stake meets the configured minimum, its heartbeat is inside the configured window, and the key was registered before the request. The callback, when set, receives the output and no accounts. `max_fee` is stored and never charged. The node process still does not submit transactions. The SDK can prove on the host and still refuses to send a transaction. An operator who funds several keys can still choose among those outputs. The cost of each extra key is the configured minimum stake. A minimum of zero does not resist that.
+Milestone 3 verifies VRF proofs with `solana-ecvrf` 0.0.1 (RFC 9381 ECVRF-EDWARDS25519-SHA512-TAI, 80-byte proof, 64-byte output). No audit of that crate was found. A node fulfills only when it is active, its stake meets the configured minimum, its heartbeat is inside the configured window, and the key was registered before the request. The callback, when set, receives the output and no accounts. `max_fee` is stored and never charged. The node process still does not submit transactions. The SDK can prove on the host and still refuses to send a transaction. An operator who funds several keys can still choose among those outputs. The cost of each extra key is the configured minimum stake. A minimum of zero does not resist that. Off-chain, the indexer can copy those accounts into PostgreSQL and the read API can serve them. That copy is not protocol truth.
 
 Do not deploy this tree to mainnet. `scripts/deploy-mainnet.sh` exits before any transaction.
 
@@ -29,7 +29,7 @@ This repository is the protocol. The website, the documentation site, and the of
 - `programs/` — `oracle-core`, `oracle-registry`, `verification`
 - `crates/` — shared types, seeds, and the cryptography boundary
 - `sdk/rust` and `sdk/js` — PDA helpers. The SDK still refuses to submit work
-- `cli/` — command entry that still refuses to send
+- `cli/` — command entry that still refuses to send. `network` reads `NUVEX_API_URL` when set
 - `node/` — health-only oracle node
 - `tests/` — LiteSVM, integration, and the callback consumer
 - `env/` — example environment files
@@ -71,4 +71,4 @@ Development program keypairs, when generated, live in `keys/program/` and are gi
 
 ## Next milestone
 
-Milestone 4: indexer, PostgreSQL, API, and dashboard reads of chain state. Fees stay unset until ADR 0005 names basis points. No mainnet deployment.
+Milestone 5: price-provider adapters and a price job. Fees stay unset until ADR 0005 names basis points. No mainnet deployment.

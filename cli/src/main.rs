@@ -4,7 +4,7 @@ use nuvex_cli::{execute, CliError};
 fn main() {
     let code = match execute(std::env::args_os()) {
         Ok(()) => 0,
-        Err(error @ CliError::NotImplemented { .. }) => {
+        Err(error @ CliError::NotImplemented { .. }) | Err(error @ CliError::ApiUnset) => {
             eprintln!("{error}");
             2
         }

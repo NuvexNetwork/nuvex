@@ -1,8 +1,8 @@
 #![forbid(unsafe_code)]
 //! CLI command dispatch.
 //!
-//! Every operational command returns [`CliError::NotImplemented`]. The CLI
-//! does not talk to a cluster.
+//! `network` reads `NUVEX_API_URL` when set. Other operational commands return
+//! [`CliError::NotImplemented`]. The CLI does not talk to a cluster.
 
 use std::ffi::OsString;
 
@@ -18,6 +18,10 @@ pub enum CliError {
         command: &'static str,
         milestone: u8,
     },
+    #[error("NUVEX_API_URL is unset. The CLI does not invent network status.")]
+    ApiUnset,
+    #[error("read API request failed: {0}")]
+    ApiFailed(String),
     #[error("{0}")]
     Usage(String),
 }
@@ -39,7 +43,7 @@ enum Command {
     Registry,
     /// Staking operations.
     Staking,
-    /// Network status.
+    /// Network status from the read API.
     Network,
 }
 
