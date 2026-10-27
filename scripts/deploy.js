@@ -23,13 +23,16 @@ async function main() {
 
   await (await registry.setFactory(await factory.getAddress())).wait();
   await (await mandates.setFactory(await factory.getAddress())).wait();
+  const studio = await hre.ethers.deployContract("Studio", [await registry.getAddress()]);
+  await studio.waitForDeployment();
 
   console.log(JSON.stringify({
     chainId: Number((await hre.ethers.provider.getNetwork()).chainId),
     registry: await registry.getAddress(),
     mandates: await mandates.getAddress(),
     factory: await factory.getAddress(),
-    note: "Live execution is disabled. Default mandates are paper-only.",
+    studio: await studio.getAddress(),
+    note: "Live execution is disabled. Default mandates are paper-only. Studio is Build → Publish → Launch on BNB.",
   }, null, 2));
 }
 
